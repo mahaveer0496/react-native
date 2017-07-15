@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableNativeFeedback } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 
 class Button extends Component {
   render() {
-    const { onPress } = this.props;
+    const { onPress, children } = this.props;
     return (
-      <TouchableNativeFeedback 
-        onPress={onPress}
-        background={TouchableNativeFeedback.Ripple('blue', true)}
+      <TouchableOpacity
+        style={styles.containerStyle} 
+        onPress={onPress}        
       >
-        <Text>
-          Click me
+        <Text style={styles.textStyle}>
+          {children}
         </Text>
-      </TouchableNativeFeedback>
+      </TouchableOpacity>
     );
   }
 }
@@ -21,11 +21,11 @@ const styles = {
   containerStyle: {
     borderBottomWidth: 1,
     padding: 5,
-    backgroundColor: '#fff',
-    justifyContent: 'flex-start',
-    flexDirection: 'row',
-    borderColor: '#ddd',
-    position: 'relative'
+    height: 40,
+    flex: 1,  
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor: '#E81E62',
   }
 }
 
