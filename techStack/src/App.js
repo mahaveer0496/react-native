@@ -8,15 +8,15 @@ import store from './redux/reducers/index.reducer';
 
 class App extends Component {
   constructor(props) {
-    super(props);    
+    super(props);
   }
-  
+
   render() {
     return (
       <Provider store={store}>
-        <View style={{flex: 1}}>
+        <View style={{ flex: 1 }}>
           <Header text="Tech Stack" />
-          <LibraryList />
+          <LibraryList />          
         </View>
       </Provider>
     );
