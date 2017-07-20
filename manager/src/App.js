@@ -11,12 +11,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     const config = {
-      apiKey: "AIzaSyAikP_jROATnczfRLhV4XjwUbcm4r17CK4",
-      authDomain: "auth-69c53.firebaseapp.com",
-      databaseURL: "https://auth-69c53.firebaseio.com",
-      projectId: "auth-69c53",
-      storageBucket: "",
-      messagingSenderId: "106163191399"
+      apiKey: 'AIzaSyAikP_jROATnczfRLhV4XjwUbcm4r17CK4',
+      authDomain: 'auth-69c53.firebaseapp.com',
+      databaseURL: 'https://auth-69c53.firebaseio.com',
+      projectId: 'auth-69c53',
+      storageBucket: '',
+      messagingSenderId: '106163191399',
     };
     firebase.initializeApp(config);
   }
@@ -31,6 +31,6 @@ class App extends Component {
       </Provider>
     );
   }
-};
+}
 
 export default App;

@@ -3,13 +3,12 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'remote-redux-devtools';
 
 import authReducer from './auth.reducer';
+
 const reducer = combineReducers({
-  auth: authReducer
-})
+  auth: authReducer,
+});
 
 export default createStore(
   reducer,
-  composeWithDevTools(
-    applyMiddleware(thunk)
-  )
-); 
+  composeWithDevTools(applyMiddleware(thunk))
+);

@@ -4,5 +4,10 @@
         "react",
         "jsx-a11y",
         "import"
-    ]
+    ],
+    "rules":{
+     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+     "jsx-a11y/href-no-hash": "off"   
+    }
+
 }

@@ -8,10 +8,10 @@ class Header extends Component {
     return (
       <View style={viewStyle}>
         <Text style={textStyle}>
-          { text }
+          {text}
         </Text>
       </View>
-    )
+    );
   }
 }
 
@@ -22,11 +22,11 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     elevation: 2,
-    position: 'relative'
+    position: 'relative',
   },
   textStyle: {
     fontSize: 20,
     color: 'white',
-  }
-}
+  },
+};
 export { Header };

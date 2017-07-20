@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 class Card extends Component {
   render() {
     let { album, children } = this.props;
-    const { containerStyle } = styles
+    const { containerStyle } = styles;
     return (
       <View style={containerStyle}>
         {children}
@@ -23,7 +23,7 @@ const styles = {
     marginLeft: 5,
     marginRight: 5,
     marginTop: 10,
-  }
-}
+  },
+};
 
 export { Card };
