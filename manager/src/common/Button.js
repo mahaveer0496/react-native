@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableHighlight } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 
 class Button extends Component {
   render() {
     const { onPress, children } = this.props;
     return (
-      <TouchableHighlight style={styles.containerStyle} onPress={onPress}>
+      <TouchableOpacity style={styles.containerStyle} onPress={onPress}>
         <Text style={styles.textStyle}>
           {children}
         </Text>
-      </TouchableHighlight>
+      </TouchableOpacity>
     );
   }
 }

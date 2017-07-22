@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import firebase from 'firebase';
 import { Header } from './common/index.common';
 
-import LoginForm from './components/LoginForm';
+import RouterComponent from './Router';
 import store from './redux/reducers/index.reducer';
 
 class App extends Component {
@@ -25,8 +25,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <View style={{ flex: 1 }}>
-          <Header text="Manager" />
-          <LoginForm />
+          <RouterComponent />
         </View>
       </Provider>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Text } from 'react-native';
-import firebase from 'firebase';
+
 import {
   Button,
   Card,
@@ -22,6 +22,12 @@ class LoginForm extends Component {
     this.onEmailChange = this.onEmailChange.bind(this);
     this.onPasswordChange = this.onPasswordChange.bind(this);
   }
+  onEmailChange(email) {
+    this.props.emailChanged(email);
+  }
+  onPasswordChange(password) {
+    this.props.passwordChanged(password);
+  }
   renderButton() {
     const { email, password, loading, loginUser } = this.props;
     if (loading) {
@@ -32,15 +38,8 @@ class LoginForm extends Component {
       <Button onPress={() => loginUser({ email, password })}>Log In</Button>
     );
   }
-  onEmailChange(email) {
-    this.props.emailChanged(email);
-  }
-  onPasswordChange(password) {
-    this.props.passwordChanged(password);
-  }
-
   render() {
-    const { email, password } = this.props;
+    const { email, password, error } = this.props;
     console.log(email, password);
     return (
       <Card>
@@ -54,16 +53,16 @@ class LoginForm extends Component {
         </CardSection>
         <CardSection>
           <Input
-            secureTextEntry={true}
+            secureTextEntry
             value={password}
             label="Password"
             onChangeText={this.onPasswordChange}
             placeholder="password"
           />
         </CardSection>
-        {/* <Text style={styles.errorTextStyle}>
-          {this.state.error}
-        </Text>  */}
+        <Text style={styles.errorTextStyle}>
+          {error}
+        </Text>
         <CardSection>
           {this.renderButton()}
         </CardSection>
@@ -84,6 +83,7 @@ const mapStateToProps = ({ auth }) => ({
   email: auth.email,
   password: auth.password,
   loading: auth.loading,
+  error: auth.error,
 });
 
 const mapDispatchToProps = dispatch => ({

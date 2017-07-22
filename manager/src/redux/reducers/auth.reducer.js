@@ -3,8 +3,9 @@ const initialState = {
   password: '',
   loading: false,
   user: null,
+  error: '',
 };
-export default (authReducer = (state = initialState, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case 'EMAIL_CHANGED':
       return { ...state, email: action.email };
@@ -13,10 +14,10 @@ export default (authReducer = (state = initialState, action) => {
     case 'LOGIN_START':
       return { ...state, loading: true };
     case 'LOGIN_FAIL':
-      return { ...state, loading: false };
+      return { ...state, loading: false, error: 'Authentication Failed' };
     case 'LOGIN_SUCCESS':
-      return { ...state, user: action.user };
+      return { ...state, loading: false, user: action.user, error: '' };
     default:
       return state;
   }
-});
+};
